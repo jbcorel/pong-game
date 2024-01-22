@@ -1,4 +1,3 @@
-'''надо будет сделать главное меню еще, и чтобы можно было нажимать короче на кнопочки и они становились другого цвета и ваще ебать кайф тогда'''
 import pygame
 from sys import exit
 from random import randint
@@ -22,8 +21,8 @@ class Player (pygame.sprite.Sprite):
             if keys[pygame.K_w]: self.rect.y += -self.speed
             elif keys[pygame.K_s]: self.rect.y += self.speed
         elif self.side == 'player2':
-            if keys[pygame.K_KP8]: self.rect.y += -self.speed
-            elif keys[pygame.K_KP2]: self.rect.y += self.speed
+            if keys[pygame.K_UP]: self.rect.y += -self.speed
+            elif keys[pygame.K_DOWN]: self.rect.y += self.speed
         elif self.side == 'AI':
             if self.rect.y < ball.sprite.rect.y: self.rect.y += self.aispeed
             if self.rect.bottom > ball.sprite.rect.bottom: self.rect.bottom += -self.aispeed
@@ -137,7 +136,6 @@ def main_menu ():
     global difficulty_menu_control
     global player1 
     global player2
-    global game_over
     
     if not difficulty_menu_control:
         main_bg = pygame.Surface((Width, Height))
@@ -237,12 +235,13 @@ def main ():
                 collision()
                 display_score()
                 
-                if score1 >= 10 or score2 >= 10:
+                if score1 >= 10 or score2 >= 10: 
                     game_over = True
             else:
                 gameover_screen()
             if button_back_tomenu.update():
                     mainmenu = True
+                    ball_restart()
                     players.empty()
                     score1 = 0
                     score2 = 0
