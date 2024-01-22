@@ -1,5 +1,5 @@
-#Author: Max Krivonosov
-#Github ID: jbcorel
+Author: Max Krivonosov
+Github ID: jbcorel
 Description: This is a basic pong game. It allows us to choose between singleplayer with levels of difficulty and multiplayer (local). There is a small bug when the ball gets stuck, but it is a backdraw of using existing models instead of pygame-drawn.
 Controls: W-S for singleplayer, W-S and arr_UP-arr_DOWN for multiplayer. NOTE: if a ball gets stuck in the singleplayer mode, press BACKSPACE to reset the position of the bot. 
 Functions and classes: 
